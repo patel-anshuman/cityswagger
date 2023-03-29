@@ -7,6 +7,10 @@
     <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
     <title>Home :: City Swagger</title>
     <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
         nav .fl {
             display: flex;
             align-items: center;
@@ -52,7 +56,7 @@
         }
         #search {
             background-color: #ebedf3;
-            width: 60%;
+            width: 70%;
             padding: 5px;
             border-radius: 5px;
         }
@@ -61,10 +65,11 @@
             height: 30px;
             border: none;
             background-color: #ebedf3;
+            padding-left: 5px;
         }
         #search-btn {
             border: none;
-            background-color: #ebedf3;
+            background-color: transparent;
         }
         #search-btn:hover {
             cursor: pointer;
@@ -96,10 +101,31 @@
             background-color: #ffffff;
         }
         /* Video Container  */
-        
+        #video-container {
+            text-align: center;
+        }
         #video-container video {
             width: 100%;
         }
+        
+        #video-container > div  {
+            position: absolute;
+            width: 100%;
+            margin-inline: auto;
+            margin-top: 250px;
+        }
+        
+        #video-container h1 {
+            text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+        #video-container button {
+            width: 220px;
+            background-color: white;
+            border: none;
+            margin-inline: 20px;
+            padding: 15px 30px;
+        }
+        
         /* Slider 1  */
         #slider1 {
             height: 400px;
@@ -170,8 +196,47 @@
             text-decoration: none;
             color: #5e5e5e;
         }
-        /* 2x2 Section  */
-
+        /* 2x2 Grid Section  */
+        #grid2x2 {
+            width: 100%;
+            margin: 50px 0px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+        #grid2x2 > div > div {
+            width: 80%;
+            margin: auto;
+        }
+        #grid2x2 img {
+            width: 100%;
+        }
+        #grid2x2 button {
+            width: 50%;
+            background-color: white;
+            border: 1px solid black;
+            padding: 15px 30px;
+        }
+        /* Extra Info  */
+        #ex-info {
+            width: 100%;
+            display: flex;
+            margin: 40px 0px;
+            justify-content: space-evenly;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        #ex-info > div {
+            padding: 30px;
+        }
+        #ex-info > div > div {
+            height: 60px;
+            align-items: center;
+        }
+        #ex-info img {
+            height: 60px;
+        }
         /* Image Container 1  */
         #container2 {
             background-image: url(./images/container/image2.jpg);
@@ -200,6 +265,95 @@
         #container2 button a {
             text-decoration: none;
             color: #5e5e5e;
+        }
+        /* Email Section  */
+        #email {
+            width: 100%;
+            height: 80px;
+            margin: 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background-color: #ebedf3;
+
+        }
+        #email > div {
+            width: 50%;
+        }
+        #email > div:nth-child(1) {
+            text-align: right;
+        }
+        #email-box {
+            width: 35%;
+            height: 30px;
+            margin: 0px;
+            padding-left: 10px;
+        }
+        #email-btn {
+            width: 35px;
+            height: 35px;
+            margin: 0px -5px;
+            background-color: #001f49;
+            border: none;
+            color: white;
+        }
+        /* Quick Links  */
+        #quick-links {
+            display: flex;
+            padding-inline: 20%;
+            font-size: 14px;
+        }
+        #quick-links > div {
+            width: 25%;
+            margin-inline: auto;
+        }
+        #quick-links .list-title {
+            font-weight: bold;
+        }
+        #quick-links a {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        #social {
+            display: flex;
+            
+        }
+        #social > a {
+            margin-top: 18px;
+            margin-right: 25px;
+        }
+        #social img {
+            height: 15px;
+        }
+        /* Footer */
+        footer {
+            padding-inline: 20%;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 80px;
+        }
+        footer > div {
+            border-top: 0.5px solid grey;
+            text-align: center;
+        }
+        footer > div > div {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 20px auto;
+            /* border: 1px solid red; */
+        }
+        #lock {
+            width: 40%;
+            justify-content: center;
+            margin-inline: auto;
+        }
+        #lock img {
+            height: 15px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -257,10 +411,19 @@
         </a>
     </div>
     <div id="video-container">
+        <div>
+            <h1 style="color: white; font-size: 50px;">We're Hitting the Refresh Button</h1>
+            <h2 style="color: #ffd000; font-size: 30px;">BUY 4 SHIRTS OR POLOS <br> GET 20% OFF</h2>
+            <div>
+                <button onclick="location.href='./shirts.html'">SHOP NEW SEASON</button>
+                <button onclick="location.href='./shirts.html'">SHOP SHIRTS</button>
+            </div>
+        </div>
         <video autoplay muted loop>
             <source src="./images/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        
     </div>
     <div id="slider1">
         <a href="">
@@ -293,7 +456,7 @@
             <h1 style="color: #ceb45c">NEW</h1>
             <h1>Meet the Henley Weave, <br>our shirt of the season.</h1>
             <p>You won’t find this dobby weave anywhere else. The cutaway collar has a modern feel for formal and relaxed looks, and natural stretch from 100% cotton keeps things comfy.</p>
-            <p>This non-iron hero comes in 10 designs and 3 fits. Pick from checks, fresh pastels and classic blues.</p>
+            <p>This non-iron hero comes in 10 designs and 3 fits. <br> Pick from checks, fresh pastels and classic blues.</p>
             <div id="image">
                 <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwe953e761/merchAssets/content/USP%20Icons/Cotton_100_White.svg" alt="">
                 <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwe298968b/merchAssets/content/USP%20Icons/non-iron-white.svg" alt="">
@@ -304,7 +467,70 @@
             </button>
         </div>
     </div>
-
+    <div id="grid2x2">
+        <div>
+            <img src="./images/grid2x2/1.jpg" alt="">
+            <div>
+                <h3>Six Nations, One Team</h3>
+                <p>Show your support in fresh, spring-ready pieces,<br> and stay warm with our new easy-to-layer knitwear wherever you’re watching the game.</p>
+                <button>DISCOVER MORE</button>
+            </div>
+        </div>
+        <div>
+            <img src="./images/grid2x2/2.jpg" alt="">
+            <div>
+                <h3>Tyrwhitt Icons</h3>
+                <p>The collection that every man should own.<br> Timeless, versatile pieces designed to slot into your wardrobe with ease.</p>
+                <button>SHOP NOW</button>
+            </div>
+        </div>
+        <div>
+            <img src="./images/grid2x2/3.jpg" alt="">
+            <div>
+                <h3>Scrum Dine With Me</h3>
+                <p>Our founder Nick Wheeler OBE swaps shirts for sashimi,<br> with the help of Rugby Legend Matt Dawson.</p>
+                <button>WATCH NOW</button>
+            </div>
+        </div>
+        <div>
+            <img src="./images/grid2x2/4.jpg" alt="">
+            <div>
+                <h3>A Tailored Life</h3>
+                <p>Meet unique leaders and explore style hints and tips through <br> Nick Wheeler's interviews in A Tailored Life.</p>
+                <button>EXPLORE MORE</button>
+            </div>
+        </div>
+    </div>
+    <div id="ex-info">
+        <div>
+            <div>
+                <img src="./images/grid2x2/icon1.svg" alt="">
+            </div>
+            <h4>CARBON NEUTRAL</h4>
+            <p>We are proud to be Carbon Neutral with <br> Planet Mark</p>
+        </div>  
+        <div>
+            <div>
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-XBR-Site/-/default/dw50a0e485/images/icons-large/express-delivery.svg" alt="">
+            </div>
+            <h4>WORLDWIDE DELIVERY</h4>
+            <p>Tracked delivery to over 200 countries</p>
+        </div> 
+        <div>
+            <div>
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-XBR-Site/-/default/dw92b7bf99/images/icons-large/returns.svg" alt="">
+            </div>
+            <h4>EASY RETURNS</h4>
+            <p>Easy returns up to 3 months after receipt</p>
+        </div> 
+        <div>
+            <div>
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/Sites-CTShirts-XBR-Site/-/default/dw0b446799/images/icons-large/feefo_logo.svg" alt="" style="height: 20px; margin-top:25px;">
+            </div>
+            <h4>AWARD-WINNING SERVICE</h4>
+            <p>4.7/5 Customer experience Feefo rating</p>
+        </div>  
+    </div>
     <div id="container2">
         <div>
             <h1>Earth, Wind and Power</h1>
@@ -314,6 +540,74 @@
             </button>
         </div>
     </div>
+    <div id="email">
+        <div>
+            <p>We will keep you posted on new products and great offers</p>
+        </div>
+        <div>
+            <div class="fl">
+                <input type="email" placeholder="Email address" name="" id="email-box">
+                <button id="email-btn">></button>
+            </div>
+        </div>
+    </div>
+    <div id="quick-links">
+        <div>
+            <p class="list-title">HELP</p>
+            <div>
+                <a href="">FAQS</a>
+                <a href="">SHIPPING</a>
+                <a href="">RETURNS</a>
+                <a href="">SIZE GUIDES</a>
+                <a href="">SHIRT MULTIBUY</a>
+                <a href="">CONTACT US</a>
+                <br>
+                <p>CALL US: <span>+44 20 8174 4100</span></p>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">LEGAL</p>
+            <div>
+                <a href="">TERMS AND CONDITIONS</a>
+                <a href="">PRIVACY POLICY</a>
+                <a href="">COOKIE POLICY</a>
+                <a href="">ACCESSIBILITY STATEMENT</a>
+                <a href="">ETHICAL TRADING POLICY</a>
+                <a href="">MODERN SLAVERY STATEMENT</a>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">MORE INFO</p>
+            <div>
+                <a href="">ABOUT US</a>
+                <a href="">CAREERS</a>
+                <a href="">DOING THINGS PROPERLY</a>
+            </div>
+        </div>
+        <div id="social">
+            <a href="">
+                <img src="./images/quicklinks/facebook-app-symbol.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/instagram.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/twitter.png" alt="">
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div id="lock">
+                <img src="./images/lock.png" alt="">
+                <p>Shopping is secure with Charles Tyrwhitt.</p>
+            </div>
+            <div>
+                <p>© 2023 Charles Tyrwhitt Shirts Ltd.</p>
+                <p>Cottons Centre, Cottons Lane, London SE1 2QG - Registered No. 2914928 - UK Vat No. 821 1491 60 - info@ctshirts.co.uk</p>
+            </div>
+        </div>
+    </footer>
 </body>
 <script>
 
