@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
+    <title>Home :: City Swagger</title>
+    <style>
+        nav .fl {
+            display: flex;
+            align-items: center;
+        }
+        nav {
+            height: 80px;
+            margin: auto;
+            box-sizing: border-box;
+            /* border: 2px solid red; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 30px;
+        }
+        nav > div {
+            width: 30%;
+            margin: auto;
+            /* border: 1px solid green; */
+            display: flex;
+            align-items: center;
+        }
+        nav > div:nth-child(1) > div {
+            margin-right: 20px;
+        }
+        nav > div:nth-child(2) {
+            justify-content: center;
+        }
+        nav > div:nth-child(3) {
+            justify-content: end;
+        }
+        nav > div:nth-child(3) > div {
+            margin-left: 30px;
+        }
+        nav img {
+            height: 30px;
+        }
+        #india > img {
+            height: 20px;
+        }
+        #logo img {
+            height: 50px;
+        }
+        #search {
+            background-color: #ebedf3;
+            width: 60%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #search-box {
+            width: 90%;
+            height: 30px;
+            border: none;
+            background-color: #ebedf3;
+        }
+        #search-btn {
+            border: none;
+            background-color: #ebedf3;
+        }
+        #search-btn:hover {
+            cursor: pointer;
+        }
+        #search-btn > img {
+            height: 15px;
+            align-items: center;
+            background-color: transparent;
+        }
+        /* Category Section  */
+        #category {
+            width: 100%;
+            height: 50px;
+            background-color: #ebedf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            color: black;
+        }
+        #category > a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #898989;
+        }
+        #category > a:hover {
+            font-weight: bold;
+            color: black;
+            background-color: #ffffff;
+        }
+        /* Video Container  */
+        
+        #video-container video {
+            width: 100%;
+        }
+        /* Slider 1  */
+        #slider1 {
+            height: 400px;
+            display: flex;
+            
+        }
+        #slider1 > a {
+            width: 300px;
+            padding: 20px;
+            margin: 20px 10px;
+            /* border: 2px solid blue; */
+            background-size: cover;
+            background-position: center;
+            text-decoration: none;
+            text-align: left;
+        }
+        #slider1 > a > h4 {
+            color: white;
+        }
+        #slider1 > a > h3 {
+            color: #ffd000;
+        }
+        #slider1 > a:nth-child(1){
+            background-image: url(./images/slide/1.jpg);
+        }
+        #slider1 > a:nth-child(2){
+            background-image: url(./images/slide/2.jpg);
+        }
+        #slider1 > a:nth-child(3){
+            background-image: url(./images/slide/3.jpg);
+        }
+        #slider1 > a:nth-child(4){
+            background-image: url(./images/slide/4.jpg);
+        }
+        #slider1 > a:nth-child(5){
+            background-image: url(./images/slide/5.jpg);
+        }
+        #slider1 > a:nth-child(6){
+            background-image: url(./images/slide/6.jpg);
+        }
+        /* Image Container 1  */
+        #container1 {
+            background-image: url(./images/container/image1.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 650px;
+            /* border: 2px solid red; */
+            display: flex;
+            align-items: center;
+        }
+        #container1 > div {
+            margin-left: 60px;
+            /* border: 2px solid yellow; */
+            width: 40%;
+            color: white;
+        }
+        #container1 #image > img {
+            height: 60px;
+        }
+        #container1 button {
+            margin-top: 30px;
+            background-color: white;
+            border: none;
+            padding: 15px 30px;
+        }
+        #container1 button a {
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+        /* 2x2 Section  */
+
+        /* Image Container 1  */
+        #container2 {
+            background-image: url(./images/container/image2.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 650px;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        #container2 > div {
+            margin-right: 60px;
+            /* border: 2px solid yellow; */
+            width: 40%;
+            text-align: center;
+            color: white;
+        }
+        #container2 button {
+            margin-top: 30px;
+            background-color: white;
+            border: none;
+            padding: 15px 30px;
+        }
+        #container2 button a {
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <div id="account">
+                <a href="./login.html">
+                    <img src="./images/account.png" alt="">
+                </a>
+            </div>
+            <div class="fl" id="india">
+                <img src="./images/india.png" alt="">
+                <p>₹(INR)</p>
+            </div>
+        </div>
+        <div>
+            <a href="./index.html" id="logo">
+                <img src="./images/logo.png" alt="">
+            </a>
+        </div>
+        <div>
+            <div id="search" class="fl">
+                <input type="text" placeholder="Search" name="" id="search-box">
+                <button id="search-btn"><img src="./images/search.png" alt=""></button>
+            </div>
+            <div id="cart">
+                <a href="./cart.html">
+                    <img src="./images/bag.png" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="category">
+        <a href="./shirts.html">
+            <p>SHIRT</p>
+        </a>
+        <a href="./suits.html">
+            <p>SUITS</p>
+        </a>
+        <a href="./trousers.html">
+            <p>TROUSERS</p>
+        </a>
+        <a href="./knitwear.html">
+            <p>KNITWEAR</p>
+        </a>
+        <a href="./jackets.html">
+            <p>JACKETS & COATS</p>
+        </a>
+        <a href="./shoes.html">
+            <p>SHOES</p>
+        </a>
+        <a href="./accessories.html">
+            <p>ACCESSORIES</p>
+        </a>
+    </div>
+    <div id="video-container">
+        <video autoplay muted loop>
+            <source src="./images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="slider1">
+        <a href="">
+            <h4>WORK SHIRTS</h4>
+            <h3>Save up to 20%</h3>
+        </a>
+        <a href="">
+            <h4>KNITWEAR</h4>
+            <h3>New Colours Added</h3>
+        </a>
+        <a href="">
+            <h4>POLOS</h4>
+            <h3>Save up to 20%</h3>
+        </a>
+        <a href="">
+            <h4>TROUSERS</h4>
+            <h3>Every Colour, Every Fit</h3>
+        </a>
+        <a href="">
+            <h4>SUITS</h4>
+            <h3>Look Smart, Feel Cool</h3>
+        </a>
+        <a href="">
+            <h4>CASUAL SHIRTS</h4>
+            <h3>Save up to 20%</h3>
+        </a>
+    </div>
+    <div id="container1">
+        <div>
+            <h1 style="color: #ceb45c">NEW</h1>
+            <h1>Meet the Henley Weave, <br>our shirt of the season.</h1>
+            <p>You won’t find this dobby weave anywhere else. The cutaway collar has a modern feel for formal and relaxed looks, and natural stretch from 100% cotton keeps things comfy.</p>
+            <p>This non-iron hero comes in 10 designs and 3 fits. Pick from checks, fresh pastels and classic blues.</p>
+            <div id="image">
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwe953e761/merchAssets/content/USP%20Icons/Cotton_100_White.svg" alt="">
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwe298968b/merchAssets/content/USP%20Icons/non-iron-white.svg" alt="">
+                <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwe410c02a/merchAssets/content/USP%20Icons/three-fit-white.svg" alt="">
+            </div>
+            <button>
+                <a href="./shirts.html">SHOP THE COLLECTION</a>
+            </button>
+        </div>
+    </div>
+
+    <div id="container2">
+        <div>
+            <h1>Earth, Wind and Power</h1>
+            <p>As a carbon neutral business, we support climate positive projects. With the help of Ecologi, we’re funding wind power farms in Mexico and Honduras to create renewable energy.</p>
+            <button>
+                <a href="./shirts.html">FIND OUT MORE</a>
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>
