@@ -1,0 +1,236 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+nav .fl {
+    display: flex;
+    align-items: center;
+}
+nav {
+    height: 80px;
+    margin: auto;
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 30px;
+}
+nav > div {
+    width: 30%;
+    margin: auto;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+nav > div:nth-child(1) > div {
+    margin-right: 20px;
+}
+nav > div:nth-child(2) {
+    justify-content: center;
+}
+nav > div:nth-child(3) {
+    justify-content: end;
+}
+nav > div:nth-child(3) > div {
+    margin-left: 30px;
+}
+nav img {
+    height: 30px;
+}
+#india > img {
+    height: 20px;
+}
+#logo img {
+    height: 50px;
+}
+#search {
+    background-color: #ebedf3;
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#search-box {
+    width: 90%;
+    height: 30px;
+    border: none;
+    background-color: #ebedf3;
+    padding-left: 5px;
+}
+#search-btn {
+    border: none;
+    background-color: transparent;
+}
+#search-btn:hover {
+    cursor: pointer;
+}
+#search-btn > img {
+    height: 15px;
+    align-items: center;
+    background-color: transparent;
+}
+/* Category Section  */
+#category {
+    width: 100%;
+    height: 50px;
+    background-color: #ebedf3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: black;
+}
+#category > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #898989;
+}
+#category > a:hover {
+    font-weight: bold;
+    color: black;
+    background-color: #ffffff;
+}
+
+/*---------------------------- Page specific ---------------------------- */
+#login {
+    width: 60%;
+    margin: auto;
+    /* border: 2px solid red; */
+}
+#login button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #001f49;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+}
+#login input {
+    width: 92%;
+    height: 10px;
+    padding: 15px 15px;
+    color: #ffffff;
+}
+#login > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid blue; */
+}
+
+#login-form label,input {
+    margin: 20px 0px;
+}
+
+#login > div > div {
+    width: 50%;
+    padding: 20px;
+    /* border: 2px solid green; */
+}
+#register > div {
+    display: flex;
+    align-items: center;
+}
+#register > div > div {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+#register img {
+    height: 100%;
+    width: 100%;
+    
+}
+/*---------------------------- Page specific ---------------------------- */
+
+/* Email Section  */
+#email-section {
+    width: 100%;
+    height: 80px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #ebedf3;
+
+}
+#email-section > div {
+    width: 50%;
+}
+#email-section > div:nth-child(1) {
+    text-align: right;
+}
+#email-box {
+    width: 35%;
+    height: 30px;
+    margin: 0px;
+    padding-left: 10px;
+}
+#email-btn {
+    width: 35px;
+    height: 35px;
+    margin: 0px -5px;
+    background-color: #001f49;
+    border: none;
+    color: white;
+}
+/* Quick Links  */
+#quick-links {
+    display: flex;
+    padding-inline: 20%;
+    font-size: 14px;
+}
+#quick-links > div {
+    width: 25%;
+    margin-inline: auto;
+}
+#quick-links .list-title {
+    font-weight: bold;
+}
+#quick-links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+#social {
+    display: flex;
+    
+}
+#social > a {
+    margin-top: 18px;
+    margin-right: 25px;
+}
+#social img {
+    height: 15px;
+}
+/* Footer */
+footer {
+    padding-inline: 20%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+footer > div {
+    border-top: 0.5px solid grey;
+    text-align: center;
+}
+footer > div > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    /* border: 1px solid red; */
+}
+#lock {
+    width: 40%;
+    justify-content: center;
+    margin-inline: auto;
+}
+#lock img {
+    height: 15px;
+    margin-right: 10px;
+}
