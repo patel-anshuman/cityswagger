@@ -64,12 +64,14 @@
     
     <!--------------------- Page specific codes  ------------------------->
 
-    <div>
+    <div id="heading">
         <h2>Create account</h2>
+    </div>
+    <div id="register">
         <div>
-            <label for="prefix">Title</label>
+            <label for="title">Title</label>
             <br>
-            <select name="title">
+            <select name="title" id="title">
                 <option value="">Choose a title</option>
                 <option value="MR">Mr.</option>
                 <option value="MRS">Mrs.</option>
@@ -95,34 +97,20 @@
             <label for="password">Password</label>
             <br>
             <p>Your password should be at least 8 characters in length, and contain at least 1 number and 1 letter</p>
-            <br>
-            <input type="password" id="password" name="password" minlength="8">
-            <br>
-            <input type="checkbox" id="show-password" name="show-password">
-            <label for="show-password">Show password</label>
+            <input type="password" id="password" name="password" minlength="8" required>
             <br>
             <label for="phone">Phone</label>
             <br>
-            <input type="tel" id="phone" name="phone">
+            <input type="tel" id="phone" name="phone" required>
             <br>
             <p>We'll only use this to contact you about your order or to send you SMS about your delivery</p>
-            <br>
-            <label for="email-offers">Emails about offers and our exciting new ranges.</label>
-            <input type="checkbox" id="email-offers" name="email-offers">
-            <br>
-            <label for="post-offers">Post about offers and our exciting new ranges.</label>
-            <input type="checkbox" id="post-offers" name="post-offers">
-            <br>
-            <label for="post-friends">Post from our third party friends.</label>
-            <input type="checkbox" id="post-friends" name="post-friends">
-            <br>
             <p>By creating an account with Charles Tyrwhitt, you confirm that you have read and accept our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
             <br>
-            <button type="submit">CREATE AN ACCOUNT</button>
+            <button id="create-account">CREATE AN ACCOUNT</button>
         </div>
         <div>
-            <h2>HAVE AN ACCOUNT?</h2>
-            <button>CLICK HERE TO LOG IN</button>
+            <h3>HAVE AN ACCOUNT?</h3>
+            <button id="login-btn">CLICK HERE TO LOG IN</button>
         </div>
     </div>
 
@@ -196,4 +184,43 @@
         </div>
     </footer>
 </body>
+<script>
+    let loginBtn = document.getElementById("login-btn");
+    loginBtn.addEventListener('click', () => {
+        location.href = './login.html';
+    })
+
+    let registerBtn = document.getElementById("create-account");
+
+    const baseURL = "http://localhost:4000";
+    //register
+    registerBtn.addEventListener('click', async () => {
+        const title = document.getElementById("title").value;
+        const first_name = document.getElementById("first-name").value;
+        const last_name = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const phone = document.getElementById("phone").value;
+
+        const user = {
+            title: title,
+            name: `${first_name} ${last_name}`,
+            email:  email,
+            password: password,
+            phone: phone
+        }
+
+        const response = await fetch(`${baseURL}/users/register`, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        });
+
+        const responseData = await response.json();
+        alert(responseData.msg);
+    });
+
+</script>
 </html>

@@ -79,7 +79,7 @@
                     <br>
                     <a href="#">Forgotten your password?</a>
                     <br>
-                    <button>LOG IN</button>
+                    <button id="account-login">LOG IN</button>
                 </div>
                 <div id="register">
                     <h3 style="color: #001f49";>New customers</h3>
@@ -182,6 +182,37 @@
     let registerBtn = document.getElementById("register-btn");
     registerBtn.addEventListener('click', () => {
         location.href = "register.html";
+    })
+
+    let loginBtn = document.getElementById("account-login");
+
+    const baseURL = "http://localhost:4000";
+    //login
+    loginBtn.addEventListener('click', async () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const payload = {
+            email:  email,
+            password: password
+        }
+
+        try {
+            const response = await fetch(`${baseURL}/users/login`, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            const responseData = await response.json();
+            //Work on recieved data
+            localStorage.setItem('token',JSON.stringify(responseData.token));
+            location.href = './index.html';
+            
+        } catch (err) {
+            console.log(err);
+        } 
     })
 </script>
 </html>
