@@ -227,16 +227,16 @@
 
     async function fetchProducts(page) {
         try {
-            const response = await fetch(`${baseServerURL}/products/shirts?_limit=${limit.value}&_page=${page === false ? 1 : page}`);
+            const response = await fetch(`${baseServerURL}/products/shirts?_limit=${limit.value}&_page=${page ? page : 1}`);
             const responseData = await response.json();
-            // const total_in_db = responseData.headers.get('X-Total-Count');
-            // limitContainer.innerHTML = `<p>Showing ${limit} of ${total_in_db} Products</p>`;
-            const totalItem = responseData.length;
-            displayData(responseData);
-            if(totalItem>20){
-                let total_pages = Math.ceil(totalItem/limit);
-                renderPageBtn(total_pages);
-            }
+            // const total_in_db = responseData["X-Total-Count"];
+            // limitContainer.innerHTML = `<p>Showing ${limit.value} of ${total_in_db} Products</p>`;
+            const totalItem = responseData.data.length;
+            displayData(responseData.data);
+            // if(totalItem>20){
+            //     let total_pages = Math.ceil(totalItem/limit.value);
+            //     renderPageBtn(total_pages);
+            // }
             products = responseData;
             console.log(responseData);
         }
@@ -248,14 +248,14 @@
 
     function displayData(data) {
         mainsection.innerHTML = "";
-        const cardList = data.map((item) => getcard(item._id, item.image, item.name, item.sizes, item.price, item.rating)).join(' ');
+        const cardList = data.map((item) => getcard(item._id, item.images[0], item.name, item.sizes, item.price, item.rating)).join(' ');
         mainsection.innerHTML = cardList;
     }
 
     function getcard(id, image, name, sizes, price, rating) {
         const card =
             `<div data-id=${id} onclick="getIndi(${id})" id="card"> 
-                <img src="https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dwcc442212/hi-res/FON2260BGO_MODEL_FULL.jpg?sw=430&sh=538&sm=fit&q=42" id="card_img">
+                <img src="${image}" id="card_img">
                 <p id="card_title">${name}</p>
                 <p id="card_price"><b>₹${price}</b></p>
                 <p class="card_offer">BUY 2 SHIRTS SAVE 10%</p>
@@ -266,27 +266,27 @@
         return card;
     }
 
-    function renderPageBtn(pages){
-        pagination.innerHTML = "";
-        let buttons = [];
+    // function renderPageBtn(pages){
+    //     pagination.innerHTML = "";
+    //     let buttons = [];
 
-        for(let i=1;i<=pages;i++){
-            buttons.push(`<button class='pagination-button' data-page-number=${i}>${i}</button>`);
-        }
-        pagination.innerHTML = buttons.join(" ");
+    //     for(let i=1;i<=pages;i++){
+    //         buttons.push(`<button class='pagination-button' data-page-number=${i}>${i}</button>`);
+    //     }
+    //     pagination.innerHTML = buttons.join(" ");
         
-        let allbtn = document.querySelectorAll('#pagination > button');
+    //     let allbtn = document.querySelectorAll('#pagination > button');
         
-        for(let btn of allbtn){
-            btn.addEventListener('click',(e)=>{
-                fetchProducts(e.target.dataset.pageNumber);
-            });
-        }
-    }
+    //     for(let btn of allbtn){
+    //         btn.addEventListener('click',(e)=>{
+    //             fetchProducts(e.target.dataset.pageNumber);
+    //         });
+    //     }
+    // }
 
-    // limit.addEventListener('change', () => {
-    //     fetchProducts();
-    // })
+    limit.addEventListener('change', () => {
+        fetchProducts();
+    })
 
     function getIndi(indiID) {
         localStorage.setItem("indi-id",indiID);

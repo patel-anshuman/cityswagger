@@ -13,7 +13,20 @@ productRouter.get('/shirts', async (req,res) => {
     try {
         const totalProductsCount = await ProductModel.countDocuments();
         let data = await ProductModel.find().skip(skip).limit(limit);
-        res.set('X-Total-Count', totalProductsCount);
+        res.status(200).send({
+            "X-Total-Count": totalProductsCount,
+            "data": data
+        });
+    } catch (err) {
+        res.status(400).send({"msg": err.message});
+    }
+});
+
+//Get one product -> for individual product page
+productRouter.get('/shirts/:id', async (req,res) => {
+    const {id} = req.params;
+    try {
+        let data = await ProductModel.findOne({_id:id});
         res.status(200).send(data);
     } catch (err) {
         res.status(400).send({"msg": err.message});
