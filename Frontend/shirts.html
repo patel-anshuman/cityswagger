@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/shirts.css">
+    <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
+    <title>Men's Shirts | City Swagger</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <div id="account" style="cursor: pointer;">
+                <img src="./images/account.png" alt="">
+            </div>
+            <div class="fl" id="india">
+                <img src="./images/india.png" alt="">
+                <p>₹(INR)</p>
+            </div>
+        </div>
+        <div>
+            <a href="./index.html" id="logo">
+                <img src="./images/logo.png" alt="">
+            </a>
+        </div>
+        <div>
+            <div id="search" class="fl">
+                <input type="text" placeholder="Search" name="" id="search-box">
+                <button id="search-btn"><img src="./images/search.png" alt=""></button>
+            </div>
+            <div id="cart">
+                <a href="./cart.html">
+                    <img src="./images/bag.png" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="category">
+        <a href="./shirts.html">
+            <p>SHIRT</p>
+        </a>
+        <a href="./suits.html">
+            <p>SUITS</p>
+        </a>
+        <a href="./trousers.html">
+            <p>TROUSERS</p>
+        </a>
+        <a href="./knitwear.html">
+            <p>KNITWEAR</p>
+        </a>
+        <a href="./jackets.html">
+            <p>JACKETS & COATS</p>
+        </a>
+        <a href="./shoes.html">
+            <p>SHOES</p>
+        </a>
+        <a href="./accessories.html">
+            <p>ACCESSORIES</p>
+        </a>
+    </div>
+    
+    <!--------------------- Page specific codes  ------------------------->
+
+    <div id="info">
+        <div>
+            <div>
+                <h1>MEN'S SHIRTS</h1>
+                <p>Charles Tyrwhitt shirts are world-famous for more than one reason: quality, perfect fit, and options. Choose from work shirts that dress you for meetings, tuxedo shirts for those special occasions, linen shirts for those easy days, and more. Order them your way; collar, cuff, size, fit, and style.</p>
+            </div>
+        </div>
+        <div id="info-img"></div>
+    </div>
+    <div id="offer">
+        <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/mb-tracker/shirt-blue-inactive.png" alt="">
+        <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/mb-tracker/shirt-blue-inactive.png" alt="">
+        <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/mb-tracker/shirt-blue-inactive.png" alt="">
+        <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/mb-tracker/shirt-blue-inactive.png" alt="">
+        <div>
+            <p><b>SHIRTS & POLOS MULTIBUY</b> | SAVE UP TO 20%</p>
+            <p>Unlock multibuy savings when you buy <b>2 or more</b></p>
+        </div>
+    </div>
+
+    <div id="limit-sort">
+        <div id="limit-container"></div>
+        <select name="limit" id="limit"  onchange="fetchProducts();">
+            <option value="20" selected>20</option>
+            <option value="40">40</option>
+            <option value="60">60</option>
+        </select>
+        <select name="sort" id="sort">
+            <option value="">SORT BY</option>
+            <option value="L2H">PRICE LOW TO HIGH</option>
+            <option value="H2L">PRICE HIGH TO LOW</option>
+        </select>
+    </div>
+    <div id="product">
+        <div id="filter">
+            <label for="size-filter">SHIRT SIZE</label>
+            <div id="size-filter">
+                <input type="checkbox" name="size-S" id="size-S">
+                <label for="size-S">S</label>
+                <br>
+                <input type="checkbox" name="size-M" id="size-M">
+                <label for="size-M">M</label>
+                <br>
+                <input type="checkbox" name="size-L" id="size-L">
+                <label for="size-L">L</label>
+                <br>
+                <input type="checkbox" name="size-XL" id="size-XL">
+                <label for="size-XL">XL</label>
+                <br>
+                <input type="checkbox" name="size-2XL" id="size-2XL">
+                <label for="size-2XL">2XL</label>
+                <br>
+                <input type="checkbox" name="size-3XL" id="size-3XL">
+                <label for="size-3XL">3XL</label>
+                <br>
+            </div>
+            <label for="rating-filter">RATING</label>
+            <div id="rating-filter">
+                <input type="checkbox" name="4na" id="4na">
+                <label for="4na">4.0 - 5.0</label>
+                <br>
+                <input type="checkbox" name="3n4" id="3n4">
+                <label for="3n4">3.0 - 4.0</label>
+                <br>
+                <input type="checkbox" name="2n3" id="2n3">
+                <label for="2n3">2.0 - 3.0</label>
+                <br>
+                <input type="checkbox" name="1n2" id="1n2">
+                <label for="1n2">1.0 - 2.0</label>
+                <br>
+            </div>
+            <!-- <div id="price-filter"></div> -->
+        </div>
+        <div>
+            <div id="container">
+                <!-- Append Products here  -->
+            </div>
+            <div id="pagination">
+                <!-- Pagination buttons here  -->
+            </div>
+        </div>
+    </div>
+
+    <!--------------------- Page specific codes  ------------------------->
+    <div id="email-section">
+        <div>
+            <p>We will keep you posted on new products and great offers</p>
+        </div>
+        <div>
+            <div class="fl">
+                <input type="email" placeholder="Email address" name="" id="email-box">
+                <button id="email-btn">></button>
+            </div>
+        </div>
+    </div>
+    <div id="quick-links">
+        <div>
+            <p class="list-title">HELP</p>
+            <div>
+                <a href="">FAQS</a>
+                <a href="">SHIPPING</a>
+                <a href="">RETURNS</a>
+                <a href="">SIZE GUIDES</a>
+                <a href="">SHIRT MULTIBUY</a>
+                <a href="">CONTACT US</a>
+                <br>
+                <p>CALL US: <span>+44 20 8174 4100</span></p>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">LEGAL</p>
+            <div>
+                <a href="">TERMS AND CONDITIONS</a>
+                <a href="">PRIVACY POLICY</a>
+                <a href="">COOKIE POLICY</a>
+                <a href="">ACCESSIBILITY STATEMENT</a>
+                <a href="">ETHICAL TRADING POLICY</a>
+                <a href="">MODERN SLAVERY STATEMENT</a>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">MORE INFO</p>
+            <div>
+                <a href="">ABOUT US</a>
+                <a href="">CAREERS</a>
+                <a href="">DOING THINGS PROPERLY</a>
+            </div>
+        </div>
+        <div id="social">
+            <a href="">
+                <img src="./images/quicklinks/facebook-app-symbol.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/instagram.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/twitter.png" alt="">
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div id="lock">
+                <img src="./images/lock.png" alt="">
+                <p>Shopping is secure with Charles Tyrwhitt.</p>
+            </div>
+            <div>
+                <p>© 2023 Charles Tyrwhitt Shirts Ltd.</p>
+                <p>Cottons Centre, Cottons Lane, London SE1 2QG - Registered No. 2914928 - UK Vat No. 821 1491 60 - info@ctshirts.co.uk</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    let account = document.getElementById("account");
+    let token = localStorage.getItem("token")||undefined;
+
+    account.addEventListener('click', () => {
+        if(token!=undefined){
+            location.href = './account.html';
+        } else {
+            location.href = './login.html';
+        }
+    });
+
+    let mainsection = document.getElementById("container");
+    let pagination = document.getElementById("pagination");
+    let products = null;
+    let baseServerURL = "http://localhost:4000";
+    let limitContainer = document.getElementById("limit-container");
+    let limit = document.getElementById("limit");
+
+    async function fetchProducts(page) {
+        try {
+            const response = await fetch(`${baseServerURL}/products/shirts?_limit=${limit.value}&_page=${page ? page : 1}`);
+            const responseData = await response.json();
+            // const total_in_db = responseData["X-Total-Count"];
+            // limitContainer.innerHTML = `<p>Showing ${limit.value} of ${total_in_db} Products</p>`;
+            const totalItem = responseData.data.length;
+            displayData(responseData.data);
+            // if(totalItem>20){
+            //     let total_pages = Math.ceil(totalItem/limit.value);
+            //     renderPageBtn(total_pages);
+            // }
+            products = responseData;
+            console.log(responseData);
+        }
+        catch (err) {
+            console.log("Error :",err);
+        }
+    }
+    fetchProducts();
+
+    function displayData(data) {
+        mainsection.innerHTML = "";
+        const cardList = data.map((item) => getcard(item._id, item.images[0], item.name, item.sizes, item.price, item.rating)).join(' ');
+        mainsection.innerHTML = cardList;
+    }
+
+    function getcard(id, image, name, sizes, price, rating) {
+        const card = `
+            <div onclick="localStorage.setItem('indi-id', '${id}'); location.href='./indv_product.html';" id="card">
+            <img src="${image}" id="card_img">
+            <p id="card_title">${name}</p>
+            <p id="card_price"><b>₹${price}</b></p>
+            <p class="card_offer">BUY 2 SHIRTS SAVE 10%</p>
+            <p class="card_offer">BUY 3 SHIRTS SAVE 15%</p>
+            <p class="card_offer">BUY 4 SHIRTS SAVE 20%</p>
+            </div>
+        `;
+        return card;
+    }
+
+
+    // function renderPageBtn(pages){
+    //     pagination.innerHTML = "";
+    //     let buttons = [];
+
+    //     for(let i=1;i<=pages;i++){
+    //         buttons.push(`<button class='pagination-button' data-page-number=${i}>${i}</button>`);
+    //     }
+    //     pagination.innerHTML = buttons.join(" ");
+        
+    //     let allbtn = document.querySelectorAll('#pagination > button');
+        
+    //     for(let btn of allbtn){
+    //         btn.addEventListener('click',(e)=>{
+    //             fetchProducts(e.target.dataset.pageNumber);
+    //         });
+    //     }
+    // }
+
+</script>
+</html>

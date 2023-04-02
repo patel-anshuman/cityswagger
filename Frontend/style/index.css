@@ -1,0 +1,348 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+nav .fl {
+    display: flex;
+    align-items: center;
+}
+nav {
+    height: 80px;
+    margin: auto;
+    box-sizing: border-box;
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 30px;
+}
+nav > div {
+    width: 30%;
+    margin: auto;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+nav > div:nth-child(1) > div {
+    margin-right: 20px;
+}
+nav > div:nth-child(2) {
+    justify-content: center;
+}
+nav > div:nth-child(3) {
+    justify-content: end;
+}
+nav > div:nth-child(3) > div {
+    margin-left: 30px;
+}
+nav img {
+    height: 30px;
+}
+#india > img {
+    height: 20px;
+}
+#logo img {
+    height: 50px;
+}
+#search {
+    background-color: #ebedf3;
+    width: 70%;
+    padding: 5px;
+    border-radius: 5px;
+}
+#search-box {
+    width: 90%;
+    height: 30px;
+    border: none;
+    background-color: #ebedf3;
+    padding-left: 5px;
+}
+#search-btn {
+    border: none;
+    background-color: transparent;
+}
+#search-btn:hover {
+    cursor: pointer;
+}
+#search-btn > img {
+    height: 15px;
+    align-items: center;
+    background-color: transparent;
+}
+/* Category Section  */
+#category {
+    width: 100%;
+    height: 50px;
+    background-color: #ebedf3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: black;
+}
+#category > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #898989;
+}
+#category > a:hover {
+    font-weight: bold;
+    color: black;
+    background-color: #ffffff;
+}
+/* Video Container  */
+#video-container {
+    text-align: center;
+}
+#video-container video {
+    width: 100%;
+}
+
+#video-container > div  {
+    position: absolute;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 250px;
+}
+
+#video-container h1 {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+#video-container button {
+    width: 220px;
+    background-color: white;
+    border: none;
+    margin-inline: 20px;
+    padding: 15px 30px;
+}
+
+/* Slider 1  */
+#slider1 {
+    height: 400px;
+    display: flex;
+    
+}
+#slider1 > a {
+    width: 300px;
+    padding: 20px;
+    margin: 20px 10px;
+    /* border: 2px solid blue; */
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    text-align: left;
+}
+#slider1 > a > h4 {
+    color: white;
+}
+#slider1 > a > h3 {
+    color: #ffd000;
+}
+#slider1 > a:nth-child(1){
+    background-image: url(../images/slide/1.jpg);
+}
+#slider1 > a:nth-child(2){
+    background-image: url(../images/slide/2.jpg);
+}
+#slider1 > a:nth-child(3){
+    background-image: url(../images/slide/3.jpg);
+}
+#slider1 > a:nth-child(4){
+    background-image: url(../images/slide/4.jpg);
+}
+#slider1 > a:nth-child(5){
+    background-image: url(../images/slide/5.jpg);
+}
+#slider1 > a:nth-child(6){
+    background-image: url(../images/slide/6.jpg);
+}
+/* Image Container 1  */
+#container1 {
+    background-image: url(../images/container/image1.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 650px;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+}
+#container1 > div {
+    margin-left: 60px;
+    /* border: 2px solid yellow; */
+    width: 40%;
+    color: white;
+}
+#container1 #image > img {
+    height: 60px;
+}
+#container1 button {
+    margin-top: 30px;
+    background-color: white;
+    border: none;
+    padding: 15px 30px;
+}
+#container1 button a {
+    text-decoration: none;
+    color: #5e5e5e;
+}
+/* 2x2 Grid Section  */
+#grid2x2 {
+    width: 100%;
+    margin: 50px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+#grid2x2 > div > div {
+    width: 80%;
+    margin: auto;
+}
+#grid2x2 img {
+    width: 100%;
+}
+#grid2x2 button {
+    width: 50%;
+    background-color: white;
+    border: 1px solid black;
+    padding: 15px 30px;
+}
+/* Extra Info  */
+#ex-info {
+    width: 100%;
+    display: flex;
+    margin: 40px 0px;
+    justify-content: space-evenly;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+#ex-info > div {
+    padding: 30px;
+}
+#ex-info > div > div {
+    height: 60px;
+    align-items: center;
+}
+#ex-info img {
+    height: 60px;
+}
+/* Image Container 1  */
+#container2 {
+    background-image: url(../images/container/image2.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 650px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#container2 > div {
+    margin-right: 60px;
+    /* border: 2px solid yellow; */
+    width: 40%;
+    text-align: center;
+    color: white;
+}
+#container2 button {
+    margin-top: 30px;
+    background-color: white;
+    border: none;
+    padding: 15px 30px;
+}
+#container2 button a {
+    text-decoration: none;
+    color: #5e5e5e;
+}
+/* Email Section  */
+#email-section {
+    width: 100%;
+    height: 80px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #ebedf3;
+
+}
+#email-section > div {
+    width: 50%;
+}
+#email-section > div:nth-child(1) {
+    text-align: right;
+}
+#email-box {
+    width: 35%;
+    height: 30px;
+    margin: 0px;
+    padding-left: 10px;
+}
+#email-btn {
+    width: 35px;
+    height: 35px;
+    margin: 0px -5px;
+    background-color: #001f49;
+    border: none;
+    color: white;
+}
+/* Quick Links  */
+#quick-links {
+    display: flex;
+    padding-inline: 20%;
+    font-size: 14px;
+}
+#quick-links > div {
+    width: 25%;
+    margin-inline: auto;
+}
+#quick-links .list-title {
+    font-weight: bold;
+}
+#quick-links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+}
+#social {
+    display: flex;
+    
+}
+#social > a {
+    margin-top: 18px;
+    margin-right: 25px;
+}
+#social img {
+    height: 15px;
+}
+/* Footer */
+footer {
+    padding-inline: 20%;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+footer > div {
+    border-top: 0.5px solid grey;
+    text-align: center;
+}
+footer > div > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    /* border: 1px solid red; */
+}
+#lock {
+    width: 40%;
+    justify-content: center;
+    margin-inline: auto;
+}
+#lock img {
+    height: 15px;
+    margin-right: 10px;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Manipulate title to product name -->
+    <link rel="stylesheet" href="./style/cart.css">
+    <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <div id="account" style="cursor: pointer;">
+                <img src="./images/account.png" alt="">
+            </div>
+            <div class="fl" id="india">
+                <img src="./images/india.png" alt="">
+                <p>₹(INR)</p>
+            </div>
+        </div>
+        <div>
+            <a href="./index.html" id="logo">
+                <img src="./images/logo.png" alt="">
+            </a>
+        </div>
+        <div>
+            <div id="search" class="fl">
+                <input type="text" placeholder="Search" name="" id="search-box">
+                <button id="search-btn"><img src="./images/search.png" alt=""></button>
+            </div>
+            <div id="cart">
+                <a href="./cart.html">
+                    <img src="./images/bag.png" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="category">
+        <a href="./shirts.html">
+            <p>SHIRT</p>
+        </a>
+        <a href="./suits.html">
+            <p>SUITS</p>
+        </a>
+        <a href="./trousers.html">
+            <p>TROUSERS</p>
+        </a>
+        <a href="./knitwear.html">
+            <p>KNITWEAR</p>
+        </a>
+        <a href="./jackets.html">
+            <p>JACKETS & COATS</p>
+        </a>
+        <a href="./shoes.html">
+            <p>SHOES</p>
+        </a>
+        <a href="./accessories.html">
+            <p>ACCESSORIES</p>
+        </a>
+    </div>
+    <!--------------------- Page specific codes  ------------------------->
+
+    <div id="page-heading">
+        <h2>BAG</h2>
+        <hr>
+    </div>
+    <div id="page-section">
+        <div id="cart-container">
+            <p id="cart-items">YOUR ITEMS (<span></span>)</p>
+            <div id="append-cart">
+                <!-- Append all cards here  -->
+            </div>
+        </div>
+        <div id="order-summary">
+            <p>ORDER SUMMARY</p>
+            <div>
+                <p>TOTAL</p>
+                <hr>
+                <div>
+                    <p>BAG TOTAL</p>
+                    <p>₹<span id="bag-total">0.0</span></p>
+                </div>
+                <div>
+                    <p><b>TOTAL</b></p>
+                    <p><b>₹<span id="total">0.0</span></b></p>
+                </div>
+                <p style="text-align: center;">(Not including delivery)</p>
+                <button id="checkout">SECURE CHECKOUT</button>
+                <p>We accept:</p>
+                <div>
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw733cef56/images/payment_methods/basket_mastercard.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwc61fa691/images/payment_methods/basket_visa.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw043e7c50/images/payment_methods/basket_paypal.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwb708a05a/images/payment_methods/basket_amex.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw1c8f39d6/images/payment_methods/apple_pay.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------- Page specific codes  ------------------------->
+    <div id="email-section">
+        <div>
+            <p>We will keep you posted on new products and great offers</p>
+        </div>
+        <div>
+            <div class="fl">
+                <input type="email" placeholder="Email address" name="" id="email-box">
+                <button id="email-btn">></button>
+            </div>
+        </div>
+    </div>
+    <div id="quick-links">
+        <div>
+            <p class="list-title">HELP</p>
+            <div>
+                <a href="">FAQS</a>
+                <a href="">SHIPPING</a>
+                <a href="">RETURNS</a>
+                <a href="">SIZE GUIDES</a>
+                <a href="">SHIRT MULTIBUY</a>
+                <a href="">CONTACT US</a>
+                <br>
+                <p>CALL US: <span>+44 20 8174 4100</span></p>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">LEGAL</p>
+            <div>
+                <a href="">TERMS AND CONDITIONS</a>
+                <a href="">PRIVACY POLICY</a>
+                <a href="">COOKIE POLICY</a>
+                <a href="">ACCESSIBILITY STATEMENT</a>
+                <a href="">ETHICAL TRADING POLICY</a>
+                <a href="">MODERN SLAVERY STATEMENT</a>
+            </div>
+        </div>
+        <div>
+            <p class="list-title">MORE INFO</p>
+            <div>
+                <a href="">ABOUT US</a>
+                <a href="">CAREERS</a>
+                <a href="">DOING THINGS PROPERLY</a>
+            </div>
+        </div>
+        <div id="social">
+            <a href="">
+                <img src="./images/quicklinks/facebook-app-symbol.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/instagram.png" alt="">
+            </a>
+            <a href="">
+                <img src="./images/quicklinks/twitter.png" alt="">
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div id="lock">
+                <img src="./images/lock.png" alt="">
+                <p>Shopping is secure with Charles Tyrwhitt.</p>
+            </div>
+            <div>
+                <p>© 2023 Charles Tyrwhitt Shirts Ltd.</p>
+                <p>Cottons Centre, Cottons Lane, London SE1 2QG - Registered No. 2914928 - UK Vat No. 821 1491 60 - info@ctshirts.co.uk</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    let account = document.getElementById("account");
+    let token = localStorage.getItem("token").replace(/"/g, '')||undefined;
+
+    account.addEventListener('click', () => {
+        if(token!=undefined){
+            location.href = './account.html';
+        } else {
+            location.href = './login.html';
+        }
+    });
+
+    let baseServerURL = "http://localhost:4000";
+    const cart = JSON.parse(localStorage.getItem('CART')) || [];
+    let data;
+
+    let cartItems = document.querySelector("#cart-items > span");
+    cartItems.innerText = cart.length;
+
+    async function renderCartData(cart){
+        let sum=0;
+        cart.map(async (item,ind) => {
+            const response = await fetch(`http://localhost:4000/products/shirts/${item.prod_id}`);
+            const data = await response.json();
+
+            const cartItem = `
+                <div id="card">
+                    <div>
+                        <p class="item-name">${data.name}</p>
+                        <button id="remove">Remove X</button>
+                    </div>
+                    <div>
+                        <div id="item-img">
+                            <img src="${data.images[0]}" alt="">
+                        </div>
+                        <div id="item-details">
+                            <p class="item-size">Size: <span>${item.size}</span></p>
+                            <p class="item-qty">Quantity: <span>${item.qty}</span></p>
+                            <p class="item-price">Price: ₹<span>${Number(data.price) * Number(item.qty)}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            `;
+
+            // const removeBtn = cartItem.querySelector("#remove");
+            // removeBtn.addEventListener("click", () => {
+            //     cart.splice(ind,1);
+            //     localStorage.setItem("CART",JSON.stringify(cart));
+            //     renderCartData(cart);
+            // });
+
+            // Append the cart item to the DOM
+            document.getElementById("cart-items").innerHTML += cartItem;
+            sum +=Number(data.price)*Number(item.qty);
+            document.getElementById("bag-total").innerText = sum;
+            document.getElementById("total").innerText = sum;
+        });
+
+        
+    }
+    renderCartData(cart);
+
+    let checkoutBtn = document.getElementById("checkout");
+    checkoutBtn.addEventListener('click', async () => {
+        const payload = {
+            products: cart
+        }
+        try {
+        const response = await fetch(`${baseServerURL}/orders`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        localStorage.removeItem("CART");
+        location.href = './index.html';
+        console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    })
+
+    
+</script>
+</html>
