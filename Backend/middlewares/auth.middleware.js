@@ -7,6 +7,7 @@ const auth = (req,res,next) => {
         const decoded = jwt.verify(token, process.env.key);
         if(decoded){
             req.body.userID = decoded.userID;
+            req.body.date_of_purchase = Date.now();
             next();
         } else {
             res.status(400).send({"msg": "Invalid Token !!"});

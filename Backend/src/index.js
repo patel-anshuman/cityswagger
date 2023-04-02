@@ -15,7 +15,6 @@ app.use(express.json());
 
 app.use('/users',userRoute);
 app.use('/products',postRoute);
-app.use(auth);
 app.use('/orders',orderRoute);
 
 app.listen(port, async () => {
