@@ -152,12 +152,12 @@
         }
     });
 
-    const baseServerURL = "http://localhost:4000";
+    let baseServerURL = "https://ill-tan-clam-robe.cyclic.app";
     const orderContainer = document.getElementById("order-section");
 
     const orderList = document.getElementById("order-list");
 
-    fetch("http://localhost:4000/orders", {
+    fetch(`${baseServerURL}/orders`, {
     headers: {
         "Authorization": `Bearer ${token}`
     }
@@ -181,7 +181,7 @@
         const productItem = document.createElement("li");
         productItem.classList.add("product-item");
 
-        fetch(`http://localhost:4000/products/shirts/${product.prod_id}`)
+        fetch(`${baseServerURL}/products/shirts/${product.prod_id}`)
         .then(res => res.json())
         .then(data => {
             const productName = document.createElement("p");
