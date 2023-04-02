@@ -83,8 +83,8 @@
     </div>
 
     <div id="limit-sort">
-        <div id="limit-container" onchange="fetchProducts();"></div>
-        <select name="limit" id="limit">
+        <div id="limit-container"></div>
+        <select name="limit" id="limit"  onchange="fetchProducts();">
             <option value="20" selected>20</option>
             <option value="40">40</option>
             <option value="60">60</option>
@@ -217,9 +217,10 @@
 </body>
 <script>
     let account = document.getElementById("account");
-    let token = localStorage.getItem("token")||"";
+    let token = localStorage.getItem("token")||undefined;
+
     account.addEventListener('click', () => {
-        if(token!=""){
+        if(token!=undefined){
             location.href = './account.html';
         } else {
             location.href = './login.html';
@@ -261,18 +262,19 @@
     }
 
     function getcard(id, image, name, sizes, price, rating) {
-        const card =
-            `<div onclick="localStorage.setItem('indi-id',"${id}"); location.href='./indv_product.html';" id="card">
-                <img src="${image}" id="card_img">
-                <p id="card_title">${name}</p>
-                <p id="card_price"><b>₹${price}</b></p>
-                <p class="card_offer">BUY 2 SHIRTS SAVE 10%</p>
-                <p class="card_offer">BUY 3 SHIRTS SAVE 15%</p>
-                <p class="card_offer">BUY 4 SHIRTS SAVE 20%</p>
+        const card = `
+            <div onclick="localStorage.setItem('indi-id', '${id}'); location.href='./indv_product.html';" id="card">
+            <img src="${image}" id="card_img">
+            <p id="card_title">${name}</p>
+            <p id="card_price"><b>₹${price}</b></p>
+            <p class="card_offer">BUY 2 SHIRTS SAVE 10%</p>
+            <p class="card_offer">BUY 3 SHIRTS SAVE 15%</p>
+            <p class="card_offer">BUY 4 SHIRTS SAVE 20%</p>
             </div>
-            `;
+        `;
         return card;
     }
+
 
     // function renderPageBtn(pages){
     //     pagination.innerHTML = "";

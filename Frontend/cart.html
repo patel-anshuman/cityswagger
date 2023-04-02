@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Manipulate title to product name -->
-    <link rel="stylesheet" href="./style/indv_product.css">
+    <link rel="stylesheet" href="./style/cart.css">
     <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
     <title>Document</title>
 </head>
@@ -62,7 +62,43 @@
     </div>
     <!--------------------- Page specific codes  ------------------------->
 
-    <div id="prod-container"></div>
+    <div id="page-heading">
+        <h2>BAG</h2>
+        <hr>
+    </div>
+    <div id="page-section">
+        <div id="cart-container">
+            <p id="cart-items">YOUR ITEMS (<span></span>)</p>
+            <div id="append-cart">
+                <!-- Append all cards here  -->
+            </div>
+        </div>
+        <div id="order-summary">
+            <p>ORDER SUMMARY</p>
+            <div>
+                <p>TOTAL</p>
+                <hr>
+                <div>
+                    <p>BAG TOTAL</p>
+                    <p>₹<span id="bag-total">0.0</span></p>
+                </div>
+                <div>
+                    <p><b>TOTAL</b></p>
+                    <p><b>₹<span id="total">0.0</span></b></p>
+                </div>
+                <p style="text-align: center;">(Not including delivery)</p>
+                <button id="checkout">SECURE CHECKOUT</button>
+                <p>We accept:</p>
+                <div>
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw733cef56/images/payment_methods/basket_mastercard.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwc61fa691/images/payment_methods/basket_visa.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw043e7c50/images/payment_methods/basket_paypal.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dwb708a05a/images/payment_methods/basket_amex.svg" alt="">
+                    <img src="https://www.charlestyrwhitt.com/on/demandware.static/-/Library-Sites-CTShirtsSharedLibrary/default/dw1c8f39d6/images/payment_methods/apple_pay.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--------------------- Page specific codes  ------------------------->
     <div id="email-section">
@@ -147,91 +183,78 @@
     });
 
     let baseServerURL = "http://localhost:4000";
-    let product_id = localStorage.getItem("indi-id").replace(/"/g, '');
-    let container = document.getElementById("prod-container");
-    let title = document.querySelector("title");
+    const cart = JSON.parse(localStorage.getItem('CART')) || [];
     let data;
 
-    async function fetchData(){
-        try {
-            const response = await fetch(`${baseServerURL}/products/shirts/${product_id}`);
-            const responseData = await response.json();
-            data = responseData;
-            console.log(responseData);
-            renderProdData(responseData);
-        } catch (err) {
-            console.log("Error :",err);
-        }
-    }
-    fetchData();
+    let cartItems = document.querySelector("#cart-items > span");
+    cartItems.innerText = cart.length;
 
-    function renderProdData(data){
-        title.innerText = data.name;
-        container.innerHTML = `
-            <div>
-                <img src="${data.images[0]}" alt="">
-            </div>
-            <div>
-                <img src="${data.images[1]}" alt="">
-            </div>
-            <div>
-                <p id="prod-name">${data.name}</p>
-                <p id="prod-price"><b>₹${data.price}</b></p>
-                <p id="prod-rating">Rating - (${data.rating}/5)</p>
-                <br>
-                <p class="prod-offer">BUY 2 SHIRTS SAVE 10%</p>
-                <p class="prod-offer">BUY 3 SHIRTS SAVE 15%</p>
-                <p class="prod-offer">BUY 4 SHIRTS SAVE 20%</p>
-                <br>
+    async function renderCartData(cart){
+        let sum=0;
+        cart.map(async (item,ind) => {
+            const response = await fetch(`http://localhost:4000/products/shirts/${item.prod_id}`);
+            const data = await response.json();
+
+            const cartItem = `
+                <div id="card">
+                    <div>
+                        <p class="item-name">${data.name}</p>
+                        <button id="remove">Remove X</button>
+                    </div>
+                    <div>
+                        <div id="item-img">
+                            <img src="${data.images[0]}" alt="">
+                        </div>
+                        <div id="item-details">
+                            <p class="item-size">Size: <span>${item.size}</span></p>
+                            <p class="item-qty">Quantity: <span>${item.qty}</span></p>
+                            <p class="item-price">Price: ₹<span>${Number(data.price) * Number(item.qty)}</span></p>
+                        </div>
+                    </div>
+                </div>
                 <hr>
-                <p id="prod-details">${data.details}</p>
-                <br>
-                <label for="prod-size"><b>SELECT SIZE</b></label>
-                <select name="prod-size" id="prod-size">
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="2XL">2XL</option>
-                    <option value="3XL">3XL</option>
-                </select>
-                <br>
-                <br>
-                <label for="prod-qty"><b>SELECT QUANTITY</b></label>
-                <select name="prod-qty" id="prod-qty">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <br>
-                <button id="add_to_cart" onclick="add_to_cart();">ADD TO BAG</button>
-            </div>
-        `;
-    }
+            `;
 
-    function add_to_cart() {
-        const selsize = document.getElementById('prod-size').value;
-        const qty = parseInt(document.getElementById('prod-qty').value);
+            // const removeBtn = cartItem.querySelector("#remove");
+            // removeBtn.addEventListener("click", () => {
+            //     cart.splice(ind,1);
+            //     localStorage.setItem("CART",JSON.stringify(cart));
+            //     renderCartData(cart);
+            // });
+
+            // Append the cart item to the DOM
+            document.getElementById("cart-items").innerHTML += cartItem;
+            sum +=Number(data.price)*Number(item.qty);
+            document.getElementById("bag-total").innerText = sum;
+            document.getElementById("total").innerText = sum;
+        });
+
         
-        if (isNaN(qty) || qty <= 0) {
-            // Invalid quantity, do not add to cart
-            return;
+    }
+    renderCartData(cart);
+
+    let checkoutBtn = document.getElementById("checkout");
+    checkoutBtn.addEventListener('click', async () => {
+        const payload = {
+            products: cart
         }
-
-        const cartItem = { 
-            prod_id: data._id,
-            size:selsize,
-            qty,
-        };
-        const cart = JSON.parse(localStorage.getItem('CART')) || [];
-        cart.push(cartItem);
-        localStorage.setItem('CART', JSON.stringify(cart));
-
-        // Optional: Show a message to confirm that item was added to cart
-        alert('Item added to cart!');
-    };
+        try {
+        const response = await fetch(`${baseServerURL}/orders`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        localStorage.removeItem("CART");
+        location.href = './index.html';
+        console.log(data);
+        } catch (err) {
+            console.log(err);
+        }
+    })
 
     
 </script>

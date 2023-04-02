@@ -95,49 +95,83 @@ nav img {
 
 /*---------------------------- Page specific ---------------------------- */
 
-#prod-container {
+#page-heading {
+    color: #373737;
     width: 75%;
     margin: 50px auto;
+}
+.order-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
     display: flex;
-    justify-content: space-between;
-}
-#prod-container > div {
-    width: 34.5%;
-    /* border: 2px solid red; */
-}
-#prod-container > div:nth-child(3){
-    width: 27%;
-}
-#prod-container img {
-    width: 100%;
-}
-#prod-name {
-    font-size: 25px;
-    margin: 0px 0px 10px 0px;
-}
-#prod-price,#prod-rating {
-    font-size: large;
-    margin: 2.5px 0px;
-}
-.prod-offer {
-    font-size: small;
-    margin: 3px 0px;
-}
-#prod-size,#prod-qty {
-    width: 30%;
+    flex-wrap: wrap;
+  }
+  
+  .order-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .order-card p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .order-card .order-details {
+    flex: 1 1 300px;
+  }
+  
+  .order-card .order-items {
+    flex: 1 1 calc(100% - 320px);
     margin-left: 20px;
-    height: 35px;
-    padding-left: 12px;
-    font-weight: 500;
-}
-#add_to_cart {
-    margin-top: 25px;
-    width: 100%;
-    height: 40px;
-    background-color: #347b74;
-    border: none;
-    color: white;
-}
+  }
+  
+  .order-card .order-item {
+    display: flex;
+    margin: 10px 0;
+  }
+  
+  .order-card .order-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+  }
+  
+  .order-card .order-item .item-details {
+    flex: 1;
+  }
+  
+  .order-card .order-item .item-details p {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .order-card .order-item .item-details .item-qty {
+    font-weight: bold;
+  }
+  
+  .order-card .order-item .item-details .item-price {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .order-card .order-details {
+      flex-basis: 100%;
+    }
+  
+    .order-card .order-items {
+      flex-basis: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
 
 /*---------------------------- Page specific ---------------------------- */
 
