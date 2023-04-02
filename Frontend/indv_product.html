@@ -12,10 +12,8 @@
 <body>
     <nav>
         <div>
-            <div id="account">
-                <a href="./login.html">
-                    <img src="./images/account.png" alt="">
-                </a>
+            <div id="account" style="cursor: pointer;">
+                <img src="./images/account.png" alt="">
             </div>
             <div class="fl" id="india">
                 <img src="./images/india.png" alt="">
@@ -64,7 +62,7 @@
     </div>
     <!--------------------- Page specific codes  ------------------------->
 
-    
+    <div id="prod-container"></div>
 
     <!--------------------- Page specific codes  ------------------------->
     <div id="email-section">
@@ -136,4 +134,78 @@
         </div>
     </footer>
 </body>
+<script>
+    let account = document.getElementById("account");
+    let token = localStorage.getItem("token")||"";
+
+    account.addEventListener('click', () => {
+        if(token!=""){
+            location.href = './account.html';
+        } else {
+            location.href = './login.html';
+        }
+    });
+
+    let baseServerURL = "http://localhost:4000";
+    let product_id = localStorage.getItem("indi-id").replace(/"/g, '');
+    let container = document.getElementById("prod-container");
+    let title = document.querySelector("title");
+    let data;
+
+    async function fetchData(){
+        try {
+            const response = await fetch(`${baseServerURL}/products/shirts/${product_id}`);
+            const responseData = await response.json();
+            data = responseData;
+            console.log(responseData);
+            renderProdData(responseData);
+        } catch (err) {
+            console.log("Error :",err);
+        }
+    }
+    fetchData();
+
+    function renderProdData(data){
+        title.innerText = data.name;
+        container.innerHTML = `
+            <div>
+                <img src="${data.images[0]}" alt="">
+            </div>
+            <div>
+                <img src="${data.images[1]}" alt="">
+            </div>
+            <div>
+                <p id="prod-name">${data.name}</p>
+                <p id="prod-price"><b>₹${data.price}</b></p>
+                <p id="prod-rating">Rating - (${data.rating}/5)</p>
+                <br>
+                <p class="prod-offer">BUY 2 SHIRTS SAVE 10%</p>
+                <p class="prod-offer">BUY 3 SHIRTS SAVE 15%</p>
+                <p class="prod-offer">BUY 4 SHIRTS SAVE 20%</p>
+                <br>
+                <hr>
+                <p id="prod-details">${data.details}</p>
+                <br>
+                <label for="prod-size"><b>SELECT SIZE</b></label>
+                <select name="prod-size" id="prod-size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="2XL">2XL</option>
+                    <option value="3XL">3XL</option>
+                </select>
+                <br>
+                <button id="add_to_cart">ADD TO BAG</button>
+            </div>
+        `;
+    }
+
+    // add_to_bag.addEventListener('click',(data) => {
+    //     let cartItem = JSON.parse(localStorage.getItem("CART"))||[];
+    //     cartItem.push(id);
+    //     localStorage.setItem("CART",cartItem);
+    // })
+    
+</script>
 </html>

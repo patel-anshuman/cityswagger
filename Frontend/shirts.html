@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/shirts.css">
     <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
-    <title>Create Account</title>
+    <title>Men's Shirts | City Swagger</title>
 </head>
 <body>
     <nav>
         <div>
-            <div id="account">
-                <a href="./login.html">
-                    <img src="./images/account.png" alt="">
-                </a>
+            <div id="account" style="cursor: pointer;">
+                <img src="./images/account.png" alt="">
             </div>
             <div class="fl" id="india">
                 <img src="./images/india.png" alt="">
@@ -85,7 +83,7 @@
     </div>
 
     <div id="limit-sort">
-        <div id="limit-container"></div>
+        <div id="limit-container" onchange="fetchProducts();"></div>
         <select name="limit" id="limit">
             <option value="20" selected>20</option>
             <option value="40">40</option>
@@ -218,6 +216,16 @@
     </footer>
 </body>
 <script>
+    let account = document.getElementById("account");
+    let token = localStorage.getItem("token")||"";
+    account.addEventListener('click', () => {
+        if(token!=""){
+            location.href = './account.html';
+        } else {
+            location.href = './login.html';
+        }
+    });
+
     let mainsection = document.getElementById("container");
     let pagination = document.getElementById("pagination");
     let products = null;
@@ -241,7 +249,7 @@
             console.log(responseData);
         }
         catch (err) {
-            console.log(err);
+            console.log("Error :",err);
         }
     }
     fetchProducts();
@@ -254,7 +262,7 @@
 
     function getcard(id, image, name, sizes, price, rating) {
         const card =
-            `<div data-id=${id} onclick="getIndi(${id})" id="card"> 
+            `<div onclick="localStorage.setItem('indi-id',"${id}"); location.href='./indv_product.html';" id="card">
                 <img src="${image}" id="card_img">
                 <p id="card_title">${name}</p>
                 <p id="card_price"><b>₹${price}</b></p>
@@ -283,15 +291,6 @@
     //         });
     //     }
     // }
-
-    limit.addEventListener('change', () => {
-        fetchProducts();
-    })
-
-    function getIndi(indiID) {
-        localStorage.setItem("indi-id",indiID);
-        location.href = "./indv_product.html";
-    }
 
 </script>
 </html>

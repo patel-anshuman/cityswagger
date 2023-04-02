@@ -11,10 +11,8 @@
 <body>
     <nav>
         <div>
-            <div id="account">
-                <a href="./login.html">
-                    <img src="./images/account.png" alt="">
-                </a>
+            <div id="account" style="cursor: pointer;">
+                <img src="./images/account.png" alt="">
             </div>
             <div class="fl" id="india">
                 <img src="./images/india.png" alt="">
@@ -185,6 +183,17 @@
     </footer>
 </body>
 <script>
+    let account = document.getElementById("account");
+    let token = localStorage.getItem("token")||"";
+
+    account.addEventListener('click', () => {
+        if(token!=""){
+            location.href = './account.html';
+        } else {
+            location.href = './login.html';
+        }
+    });
+    
     let loginBtn = document.getElementById("login-btn");
     loginBtn.addEventListener('click', () => {
         location.href = './login.html';

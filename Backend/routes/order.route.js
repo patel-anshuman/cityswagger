@@ -7,7 +7,10 @@ const bcrypt = require('bcrypt');
 
 const orderRouter = Router();
 
-
+//Get order list of particular user only
+orderRouter.get('/', async (req,res) => {
+    
+})
 
 //Export router
 module.exports = orderRouter;

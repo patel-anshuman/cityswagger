@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
 const orderSchema = mongoose.Schema({
-    title: String,
-    name : String,
-    email : String,
-    password : String,
-    phone: String
+    userID: String,
+    products: Array, //[{prod_id: , quantity: }]
+    address: String,
+    date_of_purchase: String
 },{
     versionKey: false
 });

@@ -45,5 +45,31 @@ userRouter.post('/login', async (req,res) => {
     }
 });
 
+//Get user details
+userRouter.get('/details', async (req, res) => {
+    const token = req.headers.authorization.split(" ")[1];
+    if(token) {
+      try {
+        const decoded = jwt.verify(token, process.env.key);
+        if(decoded) {
+          const { userID } = decoded;
+          const user = await UserModel.findOne({ _id: userID }).exec();
+          if(user) {
+            res.status(200).send(user);
+          } else {
+            res.status(400).send({ msg: "User not found" });
+          }
+        } else {
+          res.status(400).send({ msg: "Invalid Token !!" });
+        }
+      } catch (err) {
+        res.status(400).send({ msg: err.message });
+      }
+    } else {
+      res.status(400).send({ msg: "Authentication failed" });
+    }
+  });
+  
+
 //Export router
 module.exports = userRouter;

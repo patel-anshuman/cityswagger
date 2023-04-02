@@ -6,7 +6,7 @@ const auth = (req,res,next) => {
     if(token){
         const decoded = jwt.verify(token, process.env.key);
         if(decoded){
-            // req.body.userID = decoded.userID;
+            req.body.userID = decoded.userID;
             next();
         } else {
             res.status(400).send({"msg": "Invalid Token !!"});

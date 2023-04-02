@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Manipulate title to product name -->
-    <link rel="stylesheet" href="./style/indv_product.css">
+    <link rel="stylesheet" href="./style/account.css">
     <link rel="icon" href="./images/logo_monogram.png" type="image/icon type">
     <title>Account</title>
 </head>
 <body>
     <nav>
         <div>
-            <div id="account">
-                <a href="./login.html">
+            <div id="account" style="cursor: pointer;">
+                <a href="">
                     <img src="./images/account.png" alt="">
                 </a>
             </div>
@@ -68,11 +68,29 @@
         <div id="account-card">
             <div>
                 <img src="./images/account.png" alt="">
-                <h3>MY ACCOUNT</h3>
+                <h2>MY ACCOUNT</h2>
                 <p>Welcome, <span id="account-name"></span></p>
             </div>
             <div>
-                
+                <a href="./orders.html">
+                    <img src="./images/order-history-1.png" alt="">
+                    <p>Order History</p>
+                </a>
+                <a href="">
+                    <img src="./images/address-book.png" alt="">
+                    <p>Address Book</p>
+                </a>
+                <a href="">
+                    <img src="./images/tape-measure.png" alt="">
+                    <p>My Sizes</p>
+                </a>
+                <a href="">
+                    <img src="./images/resume.png" alt="">
+                    <p>Personal Details</p>
+                </a>
+            </div>
+            <div>
+                <button>Log out</button>
             </div>
         </div>
     </div>
@@ -147,4 +165,35 @@
         </div>
     </footer>
 </body>
+<script>
+    let baseServerURL = "http://localhost:4000";
+    let token = localStorage.getItem("token").replace(/"/g, '');
+    console.log(token);
+    let accountName = document.getElementById("account-name");
+
+    async function getUserDetails() {
+        try {
+            const response = await fetch(`${baseServerURL}/users/details`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            const user = await response.json();
+            console.log(user);
+            if(user){
+                accountName.innerText = user.name.split(" ")[0];
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    getUserDetails();
+
+    let logoutBtn = document.querySelector("#account-card button");
+
+    logoutBtn.addEventListener('click', ()=> {
+        localStorage.removeItem("token");
+        location.href='./login.html';
+    });
+</script>
 </html>
