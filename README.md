@@ -4,7 +4,7 @@ CitySwagger is a clone of Charles Tyrwhitt, a British menswear brand known for i
 
 ## Deployed Link
 
-You can access the deployed website at https://cheerful-zabaione-aa785a.netlify.app/.
+You can access the deployed website at https://cityswagger.netlify.app/.
 
 ## Features
 
