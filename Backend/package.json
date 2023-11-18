@@ -1,11 +1,12 @@
 {
-  "name": "node-packages",
+  "name": "cityswagger",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "server": "src/index.js"
   },
   "keywords": [],
   "author": "",

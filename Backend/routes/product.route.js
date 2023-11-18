@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 
 const productRouter = Router();
 
-//Get product
+//Get all shirts
 productRouter.get('/shirts', async (req,res) => {
     const {page, limit} = req.query;
     const skip = (page-1)*limit;
