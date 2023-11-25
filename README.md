@@ -1,10 +1,10 @@
 # CitySwagger - Clone of CharlesTyrwhitt.com
 
-CitySwagger is a clone of Charles Tyrwhitt, a British menswear brand known for its high-quality and affordable men's shirts, suits, shoes, and accessories. This project was developed as an individual project accomplished in 5 days, and is built using HTML5, CSS3, Vanilla JavaScript, NodeJS, ExpressJS, and MongoDB.
+Delve into an exclusive assortment of men's products and accessories at CitySwagger, where you can seamlessly browse, shop with ease, and effortlessly track your orders – all within a unified platform. Elevate your style effortlessly with CitySwagger's curated selections. This project, developed in just 5 days as an individual endeavor, is a homage to Charles Tyrwhitt, a renowned British menswear brand celebrated for its high-quality yet affordable men's shirts, suits, shoes, and accessories. The website is crafted using HTML5, CSS3, Vanilla JavaScript, NodeJS, ExpressJS, and MongoDB.
 
 ## Deployed Link
 
-You can access the deployed website at https://cityswagger.netlify.app/.
+You can access the deployed website at [CitySwagger](https://cityswagger.netlify.app/).
 
 ## Features
 
@@ -31,3 +31,7 @@ Backend:
 - NodeJS
 - ExpressJS
 - MongoDB
+
+## Contact Information
+
+For inquiries or collaboration, feel free to contact me at [patelanshuman6@gmail.com](mailto:patelanshuman6@gmail.com).
